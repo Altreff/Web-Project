@@ -1,0 +1,102 @@
+/* Прозрачный фон кнопок */
+button.mat-button {
+  background-color: transparent;
+}
+
+/* Изменение стиля поля поиска */
+.mat-form-field {
+  background-color: #333; /* Темный фон */
+  border-radius: 4px; /* Закругленные углы */
+  color: white; /* Цвет текста */
+}
+input{
+  background-color: #07111c;
+  color: white;
+  border-color: black;
+  margin-top: 12px;
+  margin-left: 12px;
+  width: 1468px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+button{
+  margin-top: 16px;
+  margin-left: 12px;
+  height: 40px;
+  width: 484px;
+  background-color: #5c7d37;
+  color: white;
+  border-radius: 20px;
+  border-color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px
+}
+
+.mat-form-field-wrapper {
+  position: relative;
+}
+
+.mat-form-field-flex {
+  display: flex;
+}
+
+.mat-form-field-infix {
+  padding-left: 10px; /* Отступ слева */
+}
+
+.mat-form-field-suffix {
+  position: absolute;
+  right: 8px; /* Расположение значка поиска */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Значок поиска */
+.mat-icon {
+  color: white; /* Цвет значка */
+}
+
+
+.game {
+  display: flex;
+  margin-top: 12px;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  padding: 10px; /* Отступ вокруг каждой игры */
+  background-color: #16202d;
+}
+
+.game-image {
+  margin-right: 10px; /* Отступ справа от изображения */
+}
+
+#game-details {
+  /* Дополнительные стили для блока с текстовой информацией */
+}
+#game-name{
+  font-size: 28px;
+  margin-top: 8px;
+}
+#game-year{
+  margin-top: -8px;
+}
+#game-price{
+  font-size: 24px;
+  margin-top: 32px;
+  margin-left: 1216px;
+  text-decoration: none;
+}
+#game-rating{
+  font-size: 20px;
+  margin-top: 60px;
+  text-decoration: none;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+a:hover #game-name {
+  text-decoration: underline; /* Добавляем подчеркивание при наведении только для названия игры */
+}
+
+

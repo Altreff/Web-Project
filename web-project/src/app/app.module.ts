@@ -16,13 +16,14 @@ import {FavoritesComponent} from "./favorites/favorites.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {LoginComponent} from "./login/login.component";
 import {HttpService} from "./services/http.service";
+import {GameDetailsComponent} from "./game-details/game-details.component";
 
 @NgModule({
   declarations: [
     FavoritesComponent,
     ProfileComponent,
     LoginComponent,
-
+    GameDetailsComponent
   ],
   imports: [
     BrowserModule,

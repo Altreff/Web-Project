@@ -7,6 +7,7 @@ export interface Game {
   country: Country;
   price: number;
   rating: number;
+  image: string;
 }
 
 export interface Category {
@@ -18,3 +19,7 @@ export interface Country {
   id: number;
   name: string;
 }
+
+
+
+

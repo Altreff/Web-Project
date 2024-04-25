@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
   <span class="spacer"></span>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png" alt="Steam logo">
-  <button mat-button routerLink="/shop">Shop</button>
-  <button mat-button routerLink="/favorites">Favorites</button>
-  <button mat-button routerLink="/profile">Profile</button>
-  <button mat-button class="login-button" routerLink="/login">Login</button>
+  <button mat-button class="button" routerLink="/shop" routerLinkActive="active-link">Shop</button>
+  <button mat-button class="button" routerLink="/favorites" routerLinkActive="active-link">Favorites</button>
+  <button mat-button class="button" routerLink="/profile" routerLinkActive="active-link">Profile</button>
+  <button mat-button class="login-button" routerLink="/login" routerLinkActive="active-link">Login</button>
 </mat-toolbar>
 
 <router-outlet />

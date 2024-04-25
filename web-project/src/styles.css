@@ -6,7 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Пример изменения цвета сайта */
 body {
-  background-color: #172032; /* Задайте желаемый цвет фона */
+  background-color: #1b2838; /* Задайте желаемый цвет фона */
   color: #f0f0f0;
 }
 
@@ -22,7 +22,8 @@ body {
   align-items: center; /* Выравнивание кнопок по вертикали */
 }
 
-.mat-button {
-  /* Дополнительные стили кнопок, если необходимо */
+button.mat-button {
+  background-color: transparent;
 }
+
 
