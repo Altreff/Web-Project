@@ -1,0 +1,25 @@
+.mat-toolbar {
+  background-color: #07111c; /* Задайте желаемый цвет навигационной панели */
+  color: white; /* Задайте желаемый цвет текста */
+  display: flex;
+  justify-content: center;
+}
+
+/* Пример настройки расположения кнопок в навигационной панели */
+.mat-toolbar-row {
+  justify-content: space-between; /* Расположение кнопок по краям */
+  align-items: center; /* Выравнивание кнопок по вертикали */
+}
+
+.mat-button {
+  margin: 0 10px;
+}
+
+.mat-toolbar .login-button {
+  margin-left: auto; /* Кнопка будет выровнена по правому краю */
+}
+img {
+  width: 44px; /* задает ширину изображения */
+  height: auto; /* автоматически определяет высоту, сохраняя пропорции */
+}
+

@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Пример изменения цвета сайта */
+body {
+  background-color: #172032; /* Задайте желаемый цвет фона */
+  color: #f0f0f0;
+}
+
+/* Пример изменения цвета навигационной панели */
+.mat-toolbar {
+  background-color: #090f13; /* Задайте желаемый цвет навигационной панели */
+  color: white; /* Задайте желаемый цвет текста */
+}
+
+/* Пример настройки расположения кнопок в навигационной панели */
+.mat-toolbar-row {
+  justify-content: space-between; /* Расположение кнопок по краям */
+  align-items: center; /* Выравнивание кнопок по вертикали */
+}
+
+.mat-button {
+  /* Дополнительные стили кнопок, если необходимо */
+}
+

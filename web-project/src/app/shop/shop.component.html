@@ -1,0 +1,25 @@
+<div>Hello!</div>
+<div>
+  <input type="text" [(ngModel)]="query" (input)="searchGames()" placeholder="Search games...">
+</div>
+<div>
+  <button (click)="switchTab('all')">All Games</button>
+  <button (click)="switchTab('top25')">Top 25 Games</button>
+  <button (click)="switchTab('categories')">Categories</button>
+  <!-- Добавьте кнопки для других вкладок здесь -->
+</div>
+<div *ngIf="!games">
+  <p>Loading games...</p>
+</div>
+<div *ngIf="games">
+
+  <div *ngFor="let game of games">
+    <!-- Вывод информации о каждой игре -->
+    <p>{{ game.name }}</p>
+    <p>{{ game.year }}</p>
+    <p>{{ game.rating }}</p>
+    <p>{{ game.price }}</p>
+  </div>
+
+</div>
+
