@@ -16,7 +16,7 @@ export class AuthService {
   authSubject = new BehaviorSubject(false);
 
   constructor(private httpClient: HttpClient) { }
-    
+
   login(user: User): Observable<any> {
     return this.httpClient.post<{ token: string }>(`${this.AUTH_SERVER}/login`, user).pipe(
       tap((res: { token: string }) => {
@@ -35,8 +35,8 @@ export class AuthService {
       })
     );
   }
-  
-  
+
+
 
   isLoggedIn() {
     return this.authSubject.asObservable();

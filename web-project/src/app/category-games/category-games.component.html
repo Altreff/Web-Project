@@ -1,0 +1,17 @@
+<div>
+  <button [routerLink]="['/shop']">All Games</button>
+  <button [routerLink]="['/shop/top25']">Top 25 Games</button>
+  <button [routerLink]="['/shop/categories']">Categories</button>
+  <!-- Добавьте кнопки для других вкладок здесь -->
+</div>
+<div *ngFor="let game of games" class="game">
+  <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b5/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg" class="game-image">
+  <a [routerLink]="['/games', game.id]">
+    <div class="game-details">
+      <p class="game-name">{{ game.name }}</p>
+      <p class="game-year">Year: {{ game.year }}</p>
+      <p class="game-price">{{ game.price }}$</p>
+      <p class="game-rating">Rating: {{ game.rating }} &#9733;</p>
+    </div>
+  </a>
+</div>

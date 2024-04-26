@@ -1,0 +1,19 @@
+footer {
+  position: fixed; /* Фиксированное позиционирование */
+  bottom: 0; /* Расположить внизу */
+  width: 100%; /* Ширина 100% */
+  background-color: #171a21; /* Цвет фона */
+  padding: 20px; /* Поля */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.valve{
+  float:left;
+  height: 32px;
+  width: auto;
+}
+.steam{
+  float:right;
+  margin-right: 32px;
+}
+

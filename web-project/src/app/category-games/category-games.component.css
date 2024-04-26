@@ -24,7 +24,7 @@ button{
   margin-top: 16px;
   margin-left: 12px;
   height: 40px;
-  width: 480px;
+  width: 484px;
   background-color: #5c7d37;
   color: white;
   border-radius: 20px;
@@ -98,5 +98,3 @@ a{
 a:hover #game-name {
   text-decoration: underline; /* Добавляем подчеркивание при наведении только для названия игры */
 }
-
-

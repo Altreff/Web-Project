@@ -1,0 +1,16 @@
+<div>
+  <button [routerLink]="['/shop']">All Games</button>
+  <button [routerLink]="['/shop/top25']">Top 25 Games</button>
+  <button [routerLink]="['/shop/categories']">Categories</button>
+  <!-- Добавьте кнопки для других вкладок здесь -->
+</div>
+  <!-- Вывод категорий и соответствующих игр -->
+<div class="category-list">
+  <div *ngFor="let category of categories" class="category-item">
+    <div class="game-details">
+    <a [routerLink]="['/shop/categories', category.id]">
+    <h2>{{ category.name }}</h2>
+    </a>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,7 @@ button{
   margin-top: 16px;
   margin-left: 12px;
   height: 40px;
-  width: 480px;
+  width: 484px;
   background-color: #5c7d37;
   color: white;
   border-radius: 20px;
@@ -94,9 +94,24 @@ button{
 a{
   color:white;
   text-decoration: none;
+  display: flex;
 }
-a:hover #game-name {
+a:hover{
   text-decoration: underline; /* Добавляем подчеркивание при наведении только для названия игры */
 }
+.category-list {
+  display: flex;       /* Устанавливаем flex-контейнер */
+  flex-wrap: wrap;     /* Разрешаем перенос элементов на новую строку */
+  gap: 10px;           /* Добавляем промежуток между элементами */
+}
 
-
+.category-item {
+  flex: 1 1 auto;      /* Устанавливаем элементы списка, чтобы они растягивались равномерно */
+  margin-top: 16px;
+  padding-top: 16px;
+  padding-left: 88px;
+  border: 1px solid #000000;
+  background-color: #5c7d37;
+  border-radius: 20px;
+  text-align:  center;
+}

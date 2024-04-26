@@ -17,13 +17,14 @@ import {ProfileComponent} from "./profile/profile.component";
 import {LoginComponent} from "./login/login.component";
 import {HttpService} from "./services/http.service";
 import {GameDetailsComponent} from "./game-details/game-details.component";
+import {FooterComponent} from "./footer/footer.component";
+import {Top25Component} from "./top25/top25.component";
+import {CategoriesComponent} from "./categories/categories.component";
+import {CategoryGamesComponent} from "./category-games/category-games.component";
 
 @NgModule({
   declarations: [
-    FavoritesComponent,
-    ProfileComponent,
-    LoginComponent,
-    GameDetailsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,14 @@ import {GameDetailsComponent} from "./game-details/game-details.component";
     AppRoutingModule,
     AppComponent,
     ShopComponent,
+    GameDetailsComponent,
+    FooterComponent,
+    ProfileComponent,
+    FavoritesComponent,
+    LoginComponent,
+    Top25Component,
+    CategoriesComponent,
+    CategoryGamesComponent
 
   ],
   providers: [HttpService],

@@ -1,0 +1,29 @@
+h2{
+  margin-top: 12px;
+  margin-left: 12px;
+  font-size: 48px;
+}
+p{
+  margin-left: 12px;
+  font-size: 24px;
+  margin-top: 12px
+}
+img{
+  margin-left: 12px;
+}
+button{
+  margin-left: 12px;
+  height: 40px;
+  width: 240px;
+  background-color: #5c7d37;
+  color: white;
+  border-radius: 20px;
+  border-color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px
+}
+li{
+  font-size: 24px;
+  margin-top: 12px;
+}
+

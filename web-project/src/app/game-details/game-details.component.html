@@ -4,9 +4,17 @@
   <p>Year: {{ game.year }}</p>
   <p>Rating: {{ game.rating }} &#9733;</p>
   <p>Description: {{game.description}}</p>
-  <p>Categories: {{game.categories}}</p>
+  <p>Categories:</p>
+  <ul>
+    <li *ngFor="let category of game.categories">
+      {{ category.name }}
+    </li>
+  </ul>
+  <p>Country: {{game.country.name}}</p>
   <p>Price: {{game.price}}$</p>
-  <p>Country: {{game.country}}</p>
+
+  <button>Add to Favorites</button>
+  <app-footer></app-footer>
 
 
 

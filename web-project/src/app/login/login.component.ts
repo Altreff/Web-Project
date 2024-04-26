@@ -1,29 +1,50 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { Component, OnInit } from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {Router} from "@angular/router";
+import {HttpService} from "../services/http.service";
+import {provideHttpClient, withFetch} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  standalone:true,
+  imports: [RouterOutlet],
 })
-export class LoginComponent {
-  user = {
-    username: 'user',
-    password: '1234'
-  };
+export class LoginComponent implements OnInit{
+  logged: boolean = false;
+  username: string = "";
+  password: string = "";
+  errorMessage: string = "";
 
-  constructor(private authService: AuthService) { }
+  constructor(private httpService: HttpService,  private router: Router) {
 
-  onSubmit() {
-    this.authService.login(this.user).subscribe(
-      (res) => {
-        // Обработка успешного входа в систему
-        console.log('Успешный вход в систему!', res);
-      },
-      (err) => {
-        // Обработка ошибок аутентификации
-        console.error('Ошибка аутентификации', err);
-      }
-    );
   }
+
+  ngOnInit() {
+    const access = localStorage.getItem("access");
+    if(access){
+      this.logged = true;
+    }
+  }
+
+  login(){
+    this.httpService.login(this.username, this.password)
+      .subscribe((data) =>{
+        this.logged = true;
+        localStorage.setItem("access", data.access);
+        localStorage.setItem("refresh", data.access);
+        this.router.navigateByUrl('/shop')
+      },
+        (error) =>{
+        this.errorMessage = "Invalid Username or password"
+        });
+  }
+
+  logout(){
+    this.logged = false;
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+  }
+
 }
