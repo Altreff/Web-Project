@@ -1,50 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import {Router} from "@angular/router";
-import {HttpService} from "../services/http.service";
-import {provideHttpClient, withFetch} from "@angular/common/http";
+import { Component } from '@angular/core';
+import { AuthService } from '../auth.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  standalone:true,
-  imports: [RouterOutlet],
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  logged: boolean = false;
-  username: string = "";
-  password: string = "";
-  errorMessage: string = "";
+export class LoginComponent {
+  user = {
+    username: 'User1', 
+    password: 'pass1' 
+  };
 
-  constructor(private httpService: HttpService,  private router: Router) {
+  constructor(private authService: AuthService, private router: Router) { }
 
-  }
-
-  ngOnInit() {
-    const access = localStorage.getItem("access");
-    if(access){
-      this.logged = true;
-    }
-  }
-
-  login(){
-    this.httpService.login(this.username, this.password)
-      .subscribe((data) =>{
-        this.logged = true;
-        localStorage.setItem("access", data.access);
-        localStorage.setItem("refresh", data.access);
-        this.router.navigateByUrl('/shop')
+  onSubmit() {
+    this.authService.login(this.user).subscribe(
+      (res) => {
+        // Обработка успешного входа в систему
+        console.log('Успешный вход в систему!', res);
+        this.router.navigate(['shop']);
       },
-        (error) =>{
-        this.errorMessage = "Invalid Username or password"
-        });
+      (err) => {
+        // Обработка ошибок аутентификации
+        console.error('Ошибка аутентификации', err);
+      }
+    );
   }
-
-  logout(){
-    this.logged = false;
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
-  }
-
 }

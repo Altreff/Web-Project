@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, tap } from 'rxjs/operators';
+import { tap, catchError } from 'rxjs/operators';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 
 interface User {
-    username: string;
-    password: string;
-  }
+  username: string;
+  password: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  AUTH_SERVER: string = 'http://localhost:3000';
+  AUTH_SERVER: string = 'http://localhost:4200';
   authSubject = new BehaviorSubject(false);
 
   constructor(private httpClient: HttpClient) { }
@@ -21,8 +21,10 @@ export class AuthService {
     return this.httpClient.post<{ token: string }>(`${this.AUTH_SERVER}/login`, user).pipe(
       tap((res: { token: string }) => {
         if (res.token) {
-          localStorage.setItem('access_token', res.token);
-          this.authSubject.next(true);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('access_token', res.token);
+            this.authSubject.next(true);
+          }
         } else {
           // Обработка ошибки аутентификации
           console.error('Ошибка аутентификации: недействительный токен');
@@ -46,4 +48,5 @@ export class AuthService {
     localStorage.removeItem('access_token');
     this.authSubject.next(false);
   }
+
 }
